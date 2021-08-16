@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+[data-theme="theme-1"],
+:root {
+  /* Backgrounds */
+  --main-bg: hsl(222, 26%, 31%);
+  --togglekeypad: hsl(223, 31%, 20%);
+  --screenbg: hsl(224, 36%, 15%);
+  /* Keys */
+  --keybg--1: hsl(225, 21%, 49%);
+  --keyshadow-1: hsl(224, 28%, 35%);
+  --keybgtoggle: hsl(6, 63%, 50%);
+  --keyshadow: hsl(6, 70%, 34%);
+  --keybg--2: hsl(30, 25%, 89%);
+  --keyshadow-2: hsl(28, 16%, 65%);
+  /* Text */
+  --text: hsl(221, 14%, 31%);
+  --text2: white;
+  --text3:white;
+  --font-family: "Spartan", sans-serif;
+  --text4:white;
+  --text-footer:hsl(25, 99%, 27%);
+}
+[data-theme="theme-2"] {
+  /* Backgrounds */
+  --main-bg: hsl(0, 0%, 90%);
+  --togglekeypad: hsl(0, 5%, 81%);
+  --screenbg: hsl(0, 0%, 93%);
+  /* Keys */
+  --keybg--1: hsl(185, 42%, 37%);
+  --keyshadow-1: hsl(185, 58%, 25%);
+  --keybgtoggle: hsl(25, 98%, 40%);
+  --keyshadow: hsl(25, 99%, 27%);
+  --keybg--2: hsl(45, 7%, 89%);
+  --keyshadow-2: hsl(35, 11%, 61%);
+  /* Text */
+  --text: hsl(60, 10%, 19%);
+  --text2: hsl(60, 10%, 19%);
+  --text3:hsl(60, 10%, 19%);
+  --text4:white;
+  --text-footer:hsl(185, 42%, 37%);
+}
+[data-theme="theme-3"] {
+  /* Backgrounds */
+  --main-bg: hsl(268, 75%, 9%);
+  --togglekeypad: hsl(268, 71%, 12%);
+  --screenbg: hsl(224, 36%, 15%);
+  /* Keys */
+  --keybg--1: hsl(281, 89%, 26%);
+  --keyshadow-1: hsl(285, 91%, 52%);
+  --keybgtoggle: hsl(176, 100%, 44%);
+  --keyshadow: hsl(177, 92%, 70%);
+  --keybg--2: hsl(268, 47%, 21%);
+  --keyshadow-2: hsl(290, 70%, 36%);
+  /* Text */
+  --text3: hsl(52, 100%, 62%);
+  --text: hsl(52, 100%, 62%);
+  --text2: white;
+  --text4: hsl(60, 10%, 19%);
+  --text-footer:hsl(52, 100%, 62%);
+}
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: 32px;
+  color: var(--text2);
+  background-color: var(--main-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+}
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  max-width: 375px;
+  width: 100%;
+  color: var(--text2);
+  height: auto;
+  padding: 25px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.align-center {
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.space-evenly {
+  justify-content: space-around;
+}
+ul:nth-child(2) {
+  position: relative;
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 6px 0;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ul label {
+  font-size: 0.8rem;
+}
+ul:nth-child(2):before {
+  position: absolute;
+  width: 95px;
+  background-color: var(--togglekeypad);
+  content: "";
+  height: 25px;
+  left: -1;
+  border-radius: 10px;
+  z-index: -1;
+}
+li {
+  list-style: none;
+  display: inline-flex;
+}
+.theme {
+  display: inline-flex;
+  font-size: 1rem;
+  align-items: center;
+}
+input[type="radio"] {
+  appearance: none;
+  border-radius: 50%;
+  width: 19px;
+  height: 19px;
+  background-color: #fff;
+  cursor: pointer;
+  opacity: 0;
+}
+input[type="radio"]:checked {
+  background-color: var(--keybgtoggle);
+  opacity: 1;
+}
+.label-ul {
+  background-color: var(--main-bg);
+  color:var(--text3);
+}
+label
+{
+  color:var(--text3);
+}
+
+.calc-screen {
+  height: 90px;
+  width: 100%;
+  margin: 30px 0 25px 0;
+}
+input[type="text"] {
+  height: 100%;
+  width: 100%;
+  background-color: var(--screenbg);
+  border-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  font-size: 3rem;
+  color: var(--text3);
+  text-align: right;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+input[type="text"]::placeholder
+{
+  color:var(--text3);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inner-box {
+  background-color: var(--togglekeypad);
+  padding: 25px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 12px;
+  grid-row-gap: 10px;
+}
+
+.calc-button {
+  background-color: var(--keyshadow-2);
+  color: var(--text);
+  position: relative;
+  height: 65px;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  border-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1;
+  transition: 0.2s;
+}
+.keypad-color-blue {
+  color: white;
+  background-color: var(--keyshadow-1);
+  height: 65px;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  border-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1;
+  transition: 0.2s;
+  position: relative;
+}
+.keypad-color-red {
+  color: var(--text4);
+  background-color: var(--keyshadow);
+  height: 65px;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  border-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1;
+  transition: 0.2s;
+  position: relative;
+}
+.calc-button::after {
+  position: absolute;
+  width: 104%;
+  height: 59px;
+  top: -1px;
+  left: -1px;
+  content: "";
+  z-index: -1;
+  background-color: var(--keybg--2);
+  border-radius: 5px;
+}
+.keypad-color-blue::after {
+  position: absolute;
+  width: 104%;
+  height: 59px;
+  top: -1px;
+  left: -1px;
+  content: "";
+  z-index: -1;
+  background-color: var(--keybg--1);
+  border-radius: 5px;
+}
+.keypad-color-blue:active::after {
+  transition: 0.2s ease;
+  visibility: collapse;
+}
+.calc-button:active {
+  transform: translateY(4px);
+  transition: 0.2s ease;
+  height: 62px;
+  background-color: var(--keybg--2);
+}
+.calc-button:active::after {
+  transition: 0.2s ease;
+  visibility: collapse;
+}
+.keypad-color-blue:active {
+  transform: translateY(4px);
+  transition: 0.2s ease;
+  height: 62px;
+  background-color: var(--keybg--1);
+}
+.keypad-color-red::after {
+  position: absolute;
+  width: 104%;
+  height: 59px;
+  top: -1px;
+  left: -1px;
+  content: "";
+  z-index: -1;
+  background-color: var(--keybgtoggle);
+  border-radius: 5px;
+}
+.keypad-color-red:active::after {
+  transition: 0.2s ease;
+  visibility: collapse;
+}
+.keypad-color-red:active {
+  transform: translateY(4px);
+  transition: 0.2s ease;
+  height: 62px;
+  background-color: var(--keybgtoggle);
+}
+
+.two-col {
+  grid-column: 2 span;
+}
+footer
+{
+  font-size: 0.8rem;
+  position: relative;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  color:var(--text2);
+  text-decoration: none;
+  
+}
+footer a
+{
+  color:var(--text-footer);
+  text-decoration: none;
+}
+@media (max-width: 425px)
+{
+  footer
+  {
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+}
