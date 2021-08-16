@@ -2,7 +2,7 @@ import Switcher from "./components/Switcher";
 import Screen from "./components/Screen";
 import Keypad from "./components/Keypad";
 import { useState, useEffect } from "react";
-
+import * as math from "mathjs";
 function App() {
   const [result, setResult] = useState("");
   const [themeBlue, setThemeBlue] = useState(true);
@@ -23,9 +23,10 @@ function App() {
   const backspace = () => {
     setResult(result.slice(0, -1));
   };
+ 
   const calculate = () => {
     try {
-      setResult(eval(result).toString());
+      setResult(math.evaluate(result).toString());
       console.log(result);
     } catch (err) {
       setResult("");

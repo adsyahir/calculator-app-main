@@ -48,8 +48,8 @@ const Keypad = ({handleClick, clear, backspace ,calculate}) => {
       <button  name="/" onClick={handleClick} class="calc-button">
         /
       </button>
-      <button  name="*" onClick={handleClick} class="calc-button">
-        *
+      <button style={{fontSize:'23px'}} name="*" onClick={handleClick} class="calc-button">
+        x
       </button>
       <button id="clear" onClick={clear} class="keypad-color-blue two-col">
         Reset
